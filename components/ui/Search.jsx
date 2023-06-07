@@ -10,10 +10,10 @@ const Search = ({setIsSearchModal}) => {
         <OutsideClickHandler onOutsideClick={()=> setIsSearchModal(false)}>
         <div className='w-full h-full grid place-content-center'>
         <div className="relative z-50 md:w-[600px] w-[370px]  bg-white border-2 p-10 rounded-3xl">
-            <Title addClass="text-[40px] text-center">Search</Title>
+            <Title addClass="text-[40px] text-center">Ürün Arama</Title>
             <input 
             type="text" 
-            placeholder='Search' 
+            placeholder='Ara...' 
             className='border-2 w-full my-3'/>
                 <ul className="mt-3">
                     <li className="flex items-center justify-between p-2 hover:bg-primary transition-all">
