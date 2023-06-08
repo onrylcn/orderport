@@ -1,3 +1,4 @@
+import About from '@/components/About';
 import Campaigns from '@/components/Campaigns';
 import Carousel from '@/components/Carousel';
 import Header from '@/components/layout/Header';
@@ -10,6 +11,7 @@ const Index = () => {
     <Carousel />
     <Campaigns />
     <MenuWrapper />
+    <About />
     </div>
   )
 }
