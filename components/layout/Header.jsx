@@ -10,11 +10,14 @@ import { useState } from "react";
 import Search from "../ui/Search";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [isSearchModal, setIsSearchModal] = useState(false);
   const [isMenuModal, setIsMenuModal] = useState(false);
   const router = useRouter();
+  const cart = useSelector((state) => state.cart);
+
   return (
     <div
       className={`h-[5.5rem] z-50 relative ${
@@ -60,11 +63,14 @@ const Header = () => {
               <FaUserAlt className="hover:text-primary transition-all cursor-pointer" />
             </span>
           </Link>
+          <span className="relative">
           <Link href="/cart">
-          <span>
-              <FaShoppingCart className="hover:text-primary transition-all cursor-pointer" />
-            </span>
+            <FaShoppingCart className="hover:text-primary transition-all cursor-pointer" />
+            <span className="w-4 h-4 text-xs grid place-content-center rounded-full bg-primary absolute -top-2 -right-3 text-black font-bold">
+                {cart.products.length === 0 ? "0" : cart.products.length}
+              </span>
           </Link>
+          </span>
           <button onClick={() => setIsSearchModal(true)}>
             <FaSearch className="hover:text-primary transition-all cursor-pointer" />
           </button>
