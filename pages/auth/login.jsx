@@ -4,8 +4,11 @@ import Title from "@/components/ui/Title";
 import { useFormik } from "formik";
 import { loginSchema } from "@/schema/login";
 import Link from "next/link";
+import { useSession, signIn } from "next-auth/react";
 
-const login = () => {
+const Login = () => {
+  const { data: session } = useSession();
+  console.log(session);
   const onSubmit = async (values, actions) => {
     await new Promise((resolve) => setTimeout(resolve, 4000));
     actions.resetForm();
@@ -67,7 +70,8 @@ const login = () => {
               </button>
               <button
                 className="!bg-secondary btn-primary w-full"
-                type="submit"
+                type="button"
+                onClick={() => signIn("github")}
               >
                 with Github Login
               </button>
@@ -80,4 +84,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
