@@ -20,9 +20,11 @@ module.exports = {
           "2xl": "1140px",
         },
       },
-      colors:{
-        primary:"#ffbe33",
+      colors: {
+        primary: "#ffbe33",
         secondary: "#222831",
+        danger: "#ff0000",
+        success: "#00ff00",
       },
       fontFamily: {
         dancing: ["Dancing Script", "cursive"],
