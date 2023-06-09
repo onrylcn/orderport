@@ -49,7 +49,8 @@ const Reservation = () => {
       placeholder: "Your E-Mail Address",
       value: values.email,
       errorMessage: errors.email,
-      touched: touched.email,    },
+      touched: touched.email,
+    },
     {
       id: 4,
       name: "persons",
@@ -77,12 +78,13 @@ const Reservation = () => {
       <div className="grid md:grid-cols-2 grid-cols-1 gap-x-10 md:gap-y-0 gap-y-8 items-center">
         <form onSubmit={handleSubmit}>
           {inputs.map((input) => (
-              <Input
+            <Input
               key={input.id}
               {...input}
               onChange={handleChange}
               onBlur={handleBlur}
-            />          ))}
+            />
+          ))}
           <button className="btn-primary" type="submit">
             Book Now
           </button>

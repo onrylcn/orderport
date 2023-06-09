@@ -9,6 +9,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
 import Search from "../ui/Search";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Header = () => {
   const [isSearchModal, setIsSearchModal] = useState(false);
@@ -29,16 +30,16 @@ const Header = () => {
         >
           <ul className="flex gap-x-2 sm:flex-row flex-col items-center">
             <li className="px-[5px] py-[20px] uppercase hover:text-primary cursor-pointer">
-              <a href="">Anasayfa</a>
+              <Link href="/">Anasayfa</Link>
             </li>
             <li className="px-[5px] py-[20px] uppercase hover:text-primary cursor-pointer">
-              <a href="">Menüler</a>
+              <Link href="/menu">Menüler</Link>
             </li>
             <li className="px-[5px] py-[20px] uppercase hover:text-primary cursor-pointer">
-              <a href="">Hakkımızda</a>
+              <Link href="/about">Hakkımızda</Link>
             </li>
             <li className="px-[5px] py-[20px] uppercase hover:text-primary cursor-pointer">
-              <a href="">Rezervasyon</a>
+              <Link href="/reservation">Rezervasyon</Link>
             </li>
           </ul>
           {isMenuModal && (
@@ -54,14 +55,14 @@ const Header = () => {
           )}
         </nav>
         <div className="flex gap-x-4 items-center">
-          <a href="">
-            <FaUserAlt className="hover:text-primary transition-all" />
-          </a>
-          <a href="">
-            <FaShoppingCart className="hover:text-primary transition-all" />
-          </a>
+          <Link href="/auth/login">
+            <FaUserAlt className="hover:text-primary transition-all cursor-pointer" />
+          </Link>
+          <Link href="/cart">
+            <FaShoppingCart className="hover:text-primary transition-all cursor-pointer" />
+          </Link>
           <button onClick={() => setIsSearchModal(true)}>
-            <FaSearch className="hover:text-primary transition-all" />
+            <FaSearch className="hover:text-primary transition-all cursor-pointer" />
           </button>
           <a href="#" className="md:inline-block hidden sm">
             <button className="btn-primary">Sipariş Ver</button>
